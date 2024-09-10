@@ -113,9 +113,15 @@ public class Bus : MonoBehaviour
     private void PolicePenalty()
     {
         PopPolicePenalty.gameObject.SetActive(true);
+        PopPolicePenalty.GetComponent<CanvasGroup>().alpha = 1;
         PopPolicePenalty.DOScale(Vector3.one, 1).From(Vector3.zero);
 
         PopPolicePenalty.GetComponent<CanvasGroup>().DOFade(0, 4);
+
+        DOVirtual.DelayedCall(4f, () =>
+        {
+            PopPolicePenalty.gameObject.SetActive(false);
+        });
 
     }
 
