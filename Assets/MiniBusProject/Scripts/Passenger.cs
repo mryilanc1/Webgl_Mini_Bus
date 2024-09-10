@@ -4,7 +4,8 @@ using UnityEngine;
 public class Passenger : MonoBehaviour
 {
     public bool isPickedUp = false;
-    
+    public bool IsStanding = false;
+
     private Transform originalParent;
     [SerializeField]
     private Animator animator;
@@ -21,7 +22,7 @@ public class Passenger : MonoBehaviour
       
     }
 
-    public void OnPickedUp( SitPoint Sitpoint )
+    public void OnPickedUp( SitPoint Sitpoint,bool IsStanding )
     {
         if (isPickedUp) return;
         isPickedUp = true;
@@ -32,8 +33,19 @@ public class Passenger : MonoBehaviour
       
         transform.localPosition = Vector3.zero; // Minibüste belirlenen noktaya taþý
         transform.localEulerAngles = Vector3.zero; // Minibüste belirlenen noktaya taþý
-        animator.SetBool("Sit_Bus", true);
-        animator.SetBool("Idle", false);
+        if(IsStanding)
+        {
+            animator.SetBool("Standing", true);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Crouching", false);
+        }
+        else
+        {
+            animator.SetBool("Sit_Bus", true);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Standing", false);
+            animator.SetBool("Crouching", false);
+        }
 
     }
 
@@ -42,12 +54,23 @@ public class Passenger : MonoBehaviour
         if (!isPickedUp) return;
         this.transform.parent.GetComponent<SitPoint>().IsPicked = false;
         isPickedUp = false;
+        IsStanding = false;
         // Yolcuyu orijinal konumuna döndürüyoruz
         transform.SetParent(originalParent);
         transform.position = DoorExitPoint.position + new Vector3();
         transform.localEulerAngles = Vector3.zero;
         animator.SetBool("Idle", true);
         animator.SetBool("Sit_Bus", false);
+        animator.SetBool("Standing", false);
+        animator.SetBool("Crouching", false);
+    }
+
+    public void OnCrouching(bool IsCrouched)
+    {
+        animator.SetBool("Crouching", IsCrouched);
+        animator.SetBool("Standing", !IsCrouched);
 
     }
+
+    
 }

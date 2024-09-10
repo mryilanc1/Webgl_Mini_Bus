@@ -2,15 +2,22 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using DG.Tweening;
 
 public class Bus : MonoBehaviour
 {
+    public int AllCapacity;
+    public int BusSeats;
     public Transform passengerParent; // Yolcularýn minibüste duracaðý yer
     public float pickupRange = 5f; // Yolcu alma mesafesi
     public List<Passenger> passengers;
+    public List<Passenger> passengerStanding;
     public List<SitPoint> sitPoints;
     public List<Transform> ExitDoorPoint;
     public StopArea CurrentStopAreaBus;
+    public bool IsPassengerCrouched;
+
+    public RectTransform PopPolicePenalty;
 
     private void Update()
     {
@@ -25,6 +32,30 @@ public class Bus : MonoBehaviour
         {
             DropOffPassengers();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            CrouchingPassenger();
+        }
+    }
+
+    
+
+    private void CrouchingPassenger()
+    {
+       if (passengerStanding.Count>0) 
+       {
+            IsPassengerCrouched = !IsPassengerCrouched;
+            foreach (var passenger in passengerStanding)
+            {
+                passenger.OnCrouching(IsPassengerCrouched);
+            }
+
+       }
+       else
+        IsPassengerCrouched = false;
+
+
     }
 
     private void TryPickupPassenger()
@@ -33,7 +64,7 @@ public class Bus : MonoBehaviour
         Passenger[] allPassengers = FindObjectsOfType<Passenger>();
         foreach (Passenger passenger in allPassengers)
         {
-            if ((!passenger.isPickedUp) && (passengers.Count < sitPoints.Count))
+            if (!passenger.isPickedUp && passengers.Count < sitPoints.Count)
             {
                 // Yolcu minibüse yeterince yakýn mý?
                 if (Vector3.Distance(transform.position, passenger.transform.position) <= pickupRange)
@@ -41,21 +72,28 @@ public class Bus : MonoBehaviour
                     // Yolcuyu minibüse ekliyoruz
                     passengers.Add(passenger);
 
+            
+
                     foreach (SitPoint point in sitPoints)
                     {
-                        if(!point.IsPicked)
+                        if (!point.IsPicked && !point.IsStanded)
                         {
-                            passenger.OnPickedUp(point);
+                            passenger.OnPickedUp(point, false);
                             point.IsPicked = true;
                             break;
                         }
+                        else if (!point.IsPicked && point.IsStanded)
+                        {
+                            passenger.OnPickedUp(point, true);
+                            point.IsPicked = true;
+                            passengerStanding.Add(passenger);
+                            break;
 
+                        }
                     }
                     break; // Bir yolcu alýndýktan sonra döngüyü sonlandýr
                 }
             }
-
-            
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -64,7 +102,21 @@ public class Bus : MonoBehaviour
         {
             CurrentStopAreaBus = AreaTrigger.Area;
 
+            if(AreaTrigger.Area == StopArea.PolicePenaltyArea && !IsPassengerCrouched && passengerStanding.Count > 0) 
+            {
+                PolicePenalty();
+            }
         }
+
+    }
+
+    private void PolicePenalty()
+    {
+        PopPolicePenalty.gameObject.SetActive(true);
+        PopPolicePenalty.DOScale(Vector3.one, 1).From(Vector3.zero);
+
+        PopPolicePenalty.GetComponent<CanvasGroup>().DOFade(0, 4);
+
     }
 
 
@@ -104,6 +156,11 @@ public class Bus : MonoBehaviour
             { PassengersAtSameTargetStopSingle[0].OnDroppedOff(ExitDoorPoint[0]);
            
               passengers.Remove(PassengersAtSameTargetStopSingle[0]);
+
+             if(passengerStanding.Contains(PassengersAtSameTargetStopSingle[0]))
+              passengerStanding.Remove(PassengersAtSameTargetStopSingle[0]);
+                
+              
                 
 
             }
@@ -116,6 +173,10 @@ public class Bus : MonoBehaviour
                 Transform dropOffPoint = (i < ExitDoorPoint.Count) ? ExitDoorPoint[i] : ExitDoorPoint[0];
                 PassengersAtSameTargetStop[i].OnDroppedOff(dropOffPoint);
                 passengers.Remove(PassengersAtSameTargetStop[i]);
+
+                if (passengerStanding.Contains(PassengersAtSameTargetStop[i]))
+                passengerStanding.Remove(PassengersAtSameTargetStop[i]);
+                
             }
         }
 

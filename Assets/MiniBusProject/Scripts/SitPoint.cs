@@ -5,4 +5,5 @@ using UnityEngine;
 public class SitPoint : MonoBehaviour
 {
     public bool IsPicked;
+    public bool IsStanded;
 }

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PoliceArea
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Water
   - UI
   - ENV
-  - 
+  - LineRenderer
   - RCC
   - RCC_WheelCollider
   - RCC_DetachablePart

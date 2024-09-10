@@ -19,5 +19,6 @@ public enum StopArea
     Zoo,               // Hayvanat Bahçesi
     Harbor,            // Liman
     Suburb,            // Banliyö
-    IndustrialArea     // Sanayi Bölgesi
+    IndustrialArea,     // Sanayi Bölgesi
+    PolicePenaltyArea     // Polis Ceza Bölgesi
 }
