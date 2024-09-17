@@ -87,6 +87,7 @@ public class Bus : MonoBehaviour
                             passenger.OnPickedUp(point, true);
                             point.IsPicked = true;
                             passengerStanding.Add(passenger);
+
                             break;
 
                         }

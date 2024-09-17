@@ -1,5 +1,7 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class Passenger : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class Passenger : MonoBehaviour
     public Transform targetStopTransform;
     public StopArea TargetStopArea;
     public TextMeshProUGUI TextTargetArea;
+
+    public TwoBoneIKConstraint RighHand_IK;
+    public TwoBoneIKConstraint LeftHand_IK;
 
 
     private void Start()
@@ -38,6 +43,30 @@ public class Passenger : MonoBehaviour
             animator.SetBool("Standing", true);
             animator.SetBool("Idle", false);
             animator.SetBool("Crouching", false);
+
+            if(Sitpoint.leftHandIKTarget != null)
+            {
+                LeftHand_IK.data.target.DOMove(Sitpoint.leftHandIKTarget.transform.position,0.25f);
+                LeftHand_IK.data.target.DORotateQuaternion(Sitpoint.leftHandIKTarget.transform.rotation, 0.25f);
+                if (Sitpoint.leftHandIKHint != null)
+                {
+                    LeftHand_IK.data.hint.DOMove(Sitpoint.leftHandIKHint.transform.position, 0.25f);
+                }
+                LeftHand_IK.weight = 1f;
+
+            }
+
+            if (Sitpoint.RightHandIKTarget != null)
+            {
+               
+                RighHand_IK.data.target.DOMove(Sitpoint.RightHandIKTarget.transform.position, 0.25f);
+                RighHand_IK.data.target.DORotateQuaternion(Sitpoint.RightHandIKTarget.transform.rotation, 0.25f);
+                if (Sitpoint.RightHandIKHint != null)
+                {
+                    RighHand_IK.data.hint.DOMove(Sitpoint.RightHandIKHint.transform.position, 0.25f);
+                }
+                RighHand_IK.weight = 1;
+            }
         }
         else
         {

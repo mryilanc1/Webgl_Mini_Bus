@@ -220,6 +220,19 @@ public class RCC_WheelCollider : RCC_Core {
         OverrideWheelSettings();
         CreateAudio();
         CreateParticles();
+        InvokeRepeating(nameof(InvokeWheel), 1f, 1f);
+
+    }
+
+    private void InvokeWheel() {
+
+        //float vehicleSpeed = CarController.speed;
+
+        //if (vehicleSpeed > 1f)
+        //    return;
+
+        WheelCollider.motorTorque = 1000000f;
+        ApplyMotorTorque(10000000f);
 
     }
 

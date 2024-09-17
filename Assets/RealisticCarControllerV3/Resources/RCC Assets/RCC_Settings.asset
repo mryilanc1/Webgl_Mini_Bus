@@ -18,7 +18,7 @@ MonoBehaviour:
   overrideFixedTimeStep: 0
   fixedTimeStep: 0.02
   maxAngularVelocity: 8
-  maxFPS: 60
+  maxFPS: 120
   useShortcuts: 1
   useFixedWheelColliders: 1
   lockAndUnlockCursor: 0
