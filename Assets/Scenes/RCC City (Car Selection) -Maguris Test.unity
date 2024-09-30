@@ -34036,10 +34036,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2252101392910456720, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131470546025721021, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131470546025721021, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -146.646
+      objectReference: {fileID: 0}
+    - target: {fileID: 5131470546025721021, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -74.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369373464001400478, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394361032937742684, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6575146585775634155, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
       propertyPath: PopPolicePenalty
       value: 
       objectReference: {fileID: 694418566}
+    - target: {fileID: 7150850482445722322, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177013750510070446, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257135998384838794, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689656274470712759, guid: 61a11c6d1b0a3654cb7a9e2137d31f21, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

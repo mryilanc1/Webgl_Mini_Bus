@@ -12948,7 +12948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857692843123262504}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.65738446, y: 0.000043565364, z: 0.00000043347245, w: 0.7535555}
   m_LocalPosition: {x: 1.019, y: 4.136, z: 0}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
@@ -12970,7 +12970,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857692843123262504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14516,8 +14516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2526852428414015331}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.6950167, z: -0, w: 0.71899366}
-  m_LocalPosition: {x: -0.602, y: 4.495, z: 1.462}
+  m_LocalRotation: {x: 0.70805866, y: 0.20600098, z: 0.26107845, w: 0.6229403}
+  m_LocalPosition: {x: -0.6032288, y: 4.566029, z: 1.1722746}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14538,7 +14538,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2526852428414015331}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15640,8 +15640,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2870065026551005426}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.54810226, z: -0, w: 0.8364113}
-  m_LocalPosition: {x: -1.59, y: 4.577, z: -0.852}
+  m_LocalRotation: {x: 0.038895942, y: 0.24964955, z: -0.19816944, w: -0.9470433}
+  m_LocalPosition: {x: -1.504963, y: 4.7616196, z: -0.92309374}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15662,7 +15662,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2870065026551005426}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16598,8 +16598,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576028475192659898}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.8474475, z: -0, w: 0.5308792}
-  m_LocalPosition: {x: -1.039, y: 4.956, z: 0.542}
+  m_LocalRotation: {x: 0.018845117, y: 0.25185105, z: 0.06423496, w: 0.96544796}
+  m_LocalPosition: {x: -1.1820505, y: 4.813411, z: 0.7799067}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16620,7 +16620,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576028475192659898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -17809,8 +17809,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4164077681537456792}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.90829545, z: -0, w: 0.41832933}
-  m_LocalPosition: {x: -0.839, y: 5.026, z: 0.777}
+  m_LocalRotation: {x: 0.11620574, y: 0.6560843, z: 0.12278133, w: 0.73550963}
+  m_LocalPosition: {x: -0.8377715, y: 4.636701, z: 0.7768863}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17831,7 +17831,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4164077681537456792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -25530,8 +25530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8234471537704531692}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.01, y: 3.632, z: 0.99}
+  m_LocalRotation: {x: 0.49269018, y: -0.41269872, z: 0.28581518, w: 0.7108065}
+  m_LocalPosition: {x: 0.938285, y: 3.6313803, z: 1.0479478}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25552,7 +25552,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8234471537704531692}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -26838,13 +26838,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8887596737625202706}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.90534633, z: -0, w: 0.42467406}
-  m_LocalPosition: {x: -0.869, y: 4.629, z: 0.645}
+  m_LocalRotation: {x: 0.58747625, y: -0.75557286, z: -0.13928066, w: 0.25413042}
+  m_LocalPosition: {x: -0.733, y: 4.629, z: 0.58}
   m_LocalScale: {x: 0.3106, y: 0.3106, z: 0.3106}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9063098969783723549}
-  m_LocalEulerAnglesHint: {x: 0, y: -129.74, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.055, y: -146.646, z: -74.216}
 --- !u!33 &6673207958537328249
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26860,7 +26860,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8887596737625202706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -27345,12 +27345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256987340143488027, guid: b689c5e3e4c302c418bc1961d77249a0, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftArm'\n\tTransform
-        'mixamorig:RightHand'\n\tTransform 'mixamorig:LeftForeArm'\n\tTransform 'mixamorig:RightForeArm'\n\tTransform
-        'mixamorig:LeftHand'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftArm'\n\tTransform
-        'mixamorig:RightHand'\n\tTransform 'mixamorig:LeftForeArm'\n\tand more ..."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 315283772815750107, guid: b689c5e3e4c302c418bc1961d77249a0, type: 3}
       propertyPath: m_Layer
