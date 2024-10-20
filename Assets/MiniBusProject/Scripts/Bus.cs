@@ -18,9 +18,24 @@ public class Bus : MonoBehaviour
     public bool IsPassengerCrouched;
 
     public RectTransform PopPolicePenalty;
+    public RenderTexture Mirror_Texture_Left;
+    public RenderTexture Mirror_Texture_Middle;
+    public RenderTexture Mirror_Texture_Right;
+
+    public Material Material_Texture_Left;
+    public Material Material_Texture_Middle;
+    public Material Material_Texture_Right;
+
+
+    public Camera Mirror_Camera_Left;
+    public Camera Mirror_Camera_Middle;
+    public Camera Mirror_Camera_Right;
+
+
 
     private void Update()
     {
+
         // Yolcu alma tuþuna basýldýðýnda (örneðin "E" tuþu)
         if (Input.GetKeyDown(KeyCode.E))
         {
