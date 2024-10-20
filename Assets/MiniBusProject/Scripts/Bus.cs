@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
 using DG.Tweening;
+using TMPro;
 
 public class Bus : MonoBehaviour
 {
@@ -16,34 +17,24 @@ public class Bus : MonoBehaviour
     public List<Transform> ExitDoorPoint;
     public StopArea CurrentStopAreaBus;
     public bool IsPassengerCrouched;
+    public RCC_CarControllerV3 RCC;
 
     public RectTransform PopPolicePenalty;
-    public RenderTexture Mirror_Texture_Left;
-    public RenderTexture Mirror_Texture_Middle;
-    public RenderTexture Mirror_Texture_Right;
-
-    public Material Material_Texture_Left;
-    public Material Material_Texture_Middle;
-    public Material Material_Texture_Right;
 
 
-    public Camera Mirror_Camera_Left;
-    public Camera Mirror_Camera_Middle;
-    public Camera Mirror_Camera_Right;
-
-
+    public TextMeshProUGUI SitCounterTMP;
 
     private void Update()
     {
 
         // Yolcu alma tuþuna basýldýðýnda (örneðin "E" tuþu)
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && RCC.speed <=1)
         {
             TryPickupPassenger();
         }
 
         // Yolcu býrakma tuþuna basýldýðýnda (örneðin "Q" tuþu)
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && RCC.speed <= 1)
         {
             DropOffPassengers();
         }
@@ -87,7 +78,9 @@ public class Bus : MonoBehaviour
                     // Yolcuyu minibüse ekliyoruz
                     passengers.Add(passenger);
 
-            
+                    SitCounterTMP.text = passengers.Count + "/"+AllCapacity;
+
+
 
                     foreach (SitPoint point in sitPoints)
                     {
@@ -181,9 +174,10 @@ public class Bus : MonoBehaviour
 
              if(passengerStanding.Contains(PassengersAtSameTargetStopSingle[0]))
               passengerStanding.Remove(PassengersAtSameTargetStopSingle[0]);
-                
-              
-                
+
+
+                SitCounterTMP.text = passengers.Count + "/" + AllCapacity;
+
 
             }
         }
@@ -195,10 +189,11 @@ public class Bus : MonoBehaviour
                 Transform dropOffPoint = (i < ExitDoorPoint.Count) ? ExitDoorPoint[i] : ExitDoorPoint[0];
                 PassengersAtSameTargetStop[i].OnDroppedOff(dropOffPoint);
                 passengers.Remove(PassengersAtSameTargetStop[i]);
+              
 
                 if (passengerStanding.Contains(PassengersAtSameTargetStop[i]))
                 passengerStanding.Remove(PassengersAtSameTargetStop[i]);
-                
+                SitCounterTMP.text = passengers.Count + "/" + AllCapacity;
             }
         }
 
