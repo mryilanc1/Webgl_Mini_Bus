@@ -7,7 +7,7 @@ using TMPro;
 /// <summary>
 /// Manages radio functionality, including volume control and channel selection.
 /// </summary>
-public class RadioManager : MonoBehaviour
+public class RadioManager_Costum : MonoBehaviour
 {
 
      /// <summary>
