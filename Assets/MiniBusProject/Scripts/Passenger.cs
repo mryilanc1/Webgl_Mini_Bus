@@ -7,6 +7,7 @@ public class Passenger : MonoBehaviour
 {
     public bool isPickedUp = false;
     public bool IsStanding = false;
+    public bool IsReached = false;
 
     private Transform originalParent;
     [SerializeField]
@@ -29,15 +30,16 @@ public class Passenger : MonoBehaviour
 
     public void OnPickedUp( SitPoint Sitpoint,bool IsStanding )
     {
+        if (IsReached) return;
         if (isPickedUp) return;
         isPickedUp = true;
-        // Yolcuyu minibüse taþýyoruz
+        // Yolcuyu minibï¿½se taï¿½ï¿½yoruz
        
        
         transform.SetParent(Sitpoint.transform);
       
-        transform.localPosition = Vector3.zero; // Minibüste belirlenen noktaya taþý
-        transform.localEulerAngles = Vector3.zero; // Minibüste belirlenen noktaya taþý
+        transform.localPosition = Vector3.zero; // Minibï¿½ste belirlenen noktaya taï¿½ï¿½
+        transform.localEulerAngles = Vector3.zero; // Minibï¿½ste belirlenen noktaya taï¿½ï¿½
         if(IsStanding)
         {
             animator.SetBool("Standing", true);
@@ -84,7 +86,8 @@ public class Passenger : MonoBehaviour
         this.transform.parent.GetComponent<SitPoint>().IsPicked = false;
         isPickedUp = false;
         IsStanding = false;
-        // Yolcuyu orijinal konumuna döndürüyoruz
+        IsReached = true;
+        // Yolcuyu orijinal konumuna dï¿½ndï¿½rï¿½yoruz
         transform.SetParent(originalParent);
         transform.position = DoorExitPoint.position + new Vector3();
         transform.localEulerAngles = Vector3.zero;
